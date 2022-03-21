@@ -1,0 +1,7 @@
+java -Djava.rmi.server.hostname=192.168.15.6 -Djava.security.policy=server.policy p2pServer 192.168.15.6 4444
+
+java -Djava.rmi.server.codebase=file:. -Djava.rmi.server.hostname=192.168.48.134 -Djava.security.policy=client.policy p2pClient 192.168.15.7 4444 192.168.48.134 4455 2
+
+java -Djava.rmi.server.codebase=file:. -Djava.rmi.server.hostname=192.168.15.7 -Djava.security.policy=client.policy p2pClient 192.168.15.7 4444 192.168.15.7 4455 1
+
+java -Djava.rmi.server.codebase=file:. -Djava.rmi.server.hostname=192.168.15.6 -Djava.security.policy=client.policy p2pClient 192.168.15.6 4444 192.168.15.6 4455 1
